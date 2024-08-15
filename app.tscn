@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://5dyj47yqesyv"]
+
+[ext_resource type="Script" path="res://scene/app.gd" id="1_4rhwe"]
+[ext_resource type="PackedScene" uid="uid://bxbefwcw0eaw4" path="res://scene/ConveyorBelt/conveyor_belt.tscn" id="2_kg2hu"]
+[ext_resource type="PackedScene" uid="uid://yvhbu04igxh3" path="res://scene/BgmManager/bgm_manager.tscn" id="3_f4tsn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_55sl4"]
+font_size = 30
+
+[node name="app" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4rhwe")
+
+[node name="BackGround" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.423529, 0.654902, 0.47451, 1)
+
+[node name="ConveyorBelt" parent="." instance=ExtResource("2_kg2hu")]
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 260.0
+offset_top = -20.0
+offset_right = 460.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_55sl4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BgmManager" parent="." instance=ExtResource("3_f4tsn")]
+offset_left = 1229.0
+offset_top = 6.0
+offset_right = 1269.0
+offset_bottom = 46.0

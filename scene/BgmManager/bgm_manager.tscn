@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://yvhbu04igxh3"]
+
+[ext_resource type="AudioStream" uid="uid://dl78u7h7hhbqi" path="res://resource/bgm/【可不】Kyu-kurarin【いよわ】.ogg" id="1_vj1rk"]
+[ext_resource type="Script" path="res://scene/BgmManager/bgm_manager.gd" id="1_wbaqu"]
+[ext_resource type="Texture2D" uid="uid://cud2cr8viqv68" path="res://resource/icon/GgMoreVerticalR.png" id="3_yaylb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7mdv7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1nark"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kbcfy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f7nc5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_afwly"]
+
+[node name="BgmManager" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_wbaqu")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("1_vj1rk")
+volume_db = -22.0
+autoplay = true
+
+[node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(0.117647, 0.117647, 0.117647, 0.537255)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7mdv7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1nark")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kbcfy")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_f7nc5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_afwly")
+icon = ExtResource("3_yaylb")
+icon_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -1.0
+offset_top = 31.0
+offset_right = 179.0
+offset_bottom = 47.0
+rotation = 3.14159
+max_value = 1.0
+step = 0.0
+value = 0.75

@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://bxbefwcw0eaw4"]
+
+[ext_resource type="Script" path="res://scene/ConveyorBelt/conveyor_belt.gd" id="1_7prbd"]
+[ext_resource type="PackedScene" uid="uid://dnpq3bslk8d4t" path="res://scene/Card/card.tscn" id="2_iirrr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_48ghi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wm1mu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c0x1y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dp6tc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u76pw"]
+
+[node name="ConveyorBelt" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_7prbd")
+
+[node name="Card" parent="." instance=ExtResource("2_iirrr")]
+visible = false
+layout_mode = 0
+offset_left = 190.0
+offset_top = -4.0
+offset_right = 670.0
+offset_bottom = 636.0
+
+[node name="CardsBelt" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1240.0
+offset_bottom = 680.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_48ghi")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wm1mu")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_c0x1y")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dp6tc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u76pw")

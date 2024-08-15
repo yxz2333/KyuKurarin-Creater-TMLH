@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=3 uid="uid://dnpq3bslk8d4t"]
+
+[ext_resource type="Script" path="res://scene/Card/card.gd" id="1_cg7mc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y6853"]
+
+[sub_resource type="Animation" id="Animation_3vsjs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(200, 56)]
+}
+
+[sub_resource type="Animation" id="Animation_eenld"]
+resource_name = "down"
+length = 0.15
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.07, 0.11, 0.15),
+"transitions": PackedFloat32Array(2, 2, -2, 2),
+"update": 0,
+"values": [Vector2(320, -640), Vector2(320, 56), Vector2(320, 132), Vector2(320, 56)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.15),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"call_finished_signal"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ao3hp"]
+resource_name = "move"
+length = 0.08
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.08),
+"transitions": PackedFloat32Array(0.5, -2, 0.5),
+"update": 0,
+"values": [Vector2(400, -640), Vector2(400, -640), Vector2(400, -640)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iyu1m"]
+_data = {
+"RESET": SubResource("Animation_3vsjs"),
+"down": SubResource("Animation_eenld"),
+"move": SubResource("Animation_ao3hp")
+}
+
+[node name="Card" type="PanelContainer"]
+custom_minimum_size = Vector2(480, 640)
+offset_left = 320.0
+offset_top = -640.0
+offset_right = 800.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_y6853")
+script = ExtResource("1_cg7mc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_iyu1m")
+}

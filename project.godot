@@ -1,0 +1,36 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="きゅうくらりん生成器"
+config/tags=PackedStringArray("软件")
+run/main_scene="res://app.tscn"
+config/features=PackedStringArray("4.2", "Mobile")
+boot_splash/bg_color=Color(0.4, 0.8, 1, 1)
+boot_splash/image="res://resource/image/八奈见/n8-5.png"
+config/icon="res://resource/image/八奈见/n8-5.png"
+config/windows_native_icon="res://resource/icon/aaa.ico"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/resizable=false
+window/size/borderless=true
+window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/filesystem_drawer/plugin.cfg", "res://addons/script-dock/plugin.cfg")
+
+[rendering]
+
+renderer/rendering_method="mobile"
